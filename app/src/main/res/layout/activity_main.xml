@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF2CC"
+        tools:context=".MainActivity">
+
+    <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    <TextView
+                            android:id="@+id/textView_cpu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="CPU"
+                            android:textSize="36sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textView_cpu_hp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="HP"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/textView_cpu"
+                            app:layout_constraintTop_toBottomOf="@id/textView_cpu" />
+
+                    <ProgressBar
+                            android:id="@+id/progressBar_cpu"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="120dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/progress_bg"
+                            android:progressDrawable="@drawable/progressbar"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView_cpu_hp"
+                            app:layout_constraintStart_toEndOf="@+id/textView_cpu_hp"
+                            app:layout_constraintTop_toTopOf="@+id/textView_cpu_hp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                        android:id="@+id/hand_cpu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        tools:srcCompat="@drawable/cpu" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CPUと五番勝負じゃんけん！"
+                    android:textColor="#E91E63"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                <ImageView
+                        android:id="@+id/hand_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:visibility="visible"
+                        tools:srcCompat="@drawable/player" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_weight="1">
+
+                    <TextView
+                            android:id="@+id/textView_player"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="Player"
+                            android:textSize="36sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textView_player_hp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="HP"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/textView_player"
+                            app:layout_constraintTop_toBottomOf="@id/textView_player" />
+
+                    <ProgressBar
+                            android:id="@+id/progressBar_player"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="120dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/progress_bg"
+                            android:progressDrawable="@drawable/progressbar"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView_player_hp"
+                            app:layout_constraintStart_toEndOf="@id/textView_player_hp"
+                            app:layout_constraintTop_toTopOf="@+id/textView_player_hp" />
+
+                    <TextView
+                            android:id="@+id/textView_results"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="results"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/textView_player"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_player_hp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+
+                <ImageView
+                        android:id="@+id/button_goo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:onClick="goo"
+                        android:text="グー"
+                        app:srcCompat="@drawable/goo" />
+
+                <ImageView
+                        android:id="@+id/button_choki"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:onClick="choki"
+                        android:text="チョキ"
+                        app:srcCompat="@drawable/choki" />
+
+                <ImageView
+                        android:id="@+id/button_paa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginEnd="41dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:onClick="paa"
+                        android:text="パー"
+                        app:srcCompat="@drawable/paa" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
